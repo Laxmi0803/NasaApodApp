@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sample.nasaapodapp.view.HomeFragment"
+        android:label="Nasa Apod"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="dateValue"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="" />
+    </fragment>
+    <dialog
+        android:id="@+id/calenderFragment"
+        android:name="com.sample.nasaapodapp.view.CalenderFragment"
+        android:label="Calender"
+        tools:layout="@layout/fragment_calender" >
+        <action
+            android:id="@+id/action_calenderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.sample.nasaapodapp.view.FavoriteFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
